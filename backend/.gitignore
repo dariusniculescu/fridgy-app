@@ -1,0 +1,47 @@
+### Java & Maven ###
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.tar.gz
+
+### Maven Wrapper ###
+.mvn/
+mvnw
+mvnw.cmd
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+gen/
+
+### OS & Temporary files ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+log/
+*.log
+temp/
+tmp/
+
+# Protect API keys and secrets
+backend/src/main/resources/application.properties
+
+# Local environment variables
+.env
+.env.local
+*.properties.local
+
+# Windows specific
+Desktop.ini
+
+# Documentation leftovers
+HELP.md
