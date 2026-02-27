@@ -61,3 +61,35 @@ The data layer is managed via Spring Data JPA with a relational MySQL structure.
 
 ---
 
+##  Project Showcase
+
+###  Public & Authentication
+
+| Landing Page (Hero) | Login Screen |
+|:---:|:---:|
+| ![Landing](assets/hero.png) | ![Login](assets/login_screen.png) |
+
+---
+
+###  User Experience
+
+| Register Screen | User Profile |
+|:---:|:---:|
+| ![Register](assets/register_screen.png) | ![Profile](assets/user_profile.png) |
+
+---
+
+###  AI Engine & Ingredients
+
+| Ingredient Suggestion | AI Generated Recipe |
+|:---:|:---:|
+| ![Suggestion](assets/ingredient_suggestion.png) | ![Generated Recipe](assets/generated_recipe.png) |
+
+---
+
+###  Admin Management
+
+| Admin Statistics Dashboard | Ingredient Moderation Queue |
+|:---:|:---:|
+| ![Admin Dashboard](assets/admin_dashboard.png) | ![Moderation](assets/ingredient_moderation.png) |
+
