@@ -26,6 +26,7 @@ export default function AddIngredient() {
 
     const decoded = useMemo(() => token ? decodeJWT(token) : null, [token]);
     const role = decoded?.role ?? null;
+    const email = decoded?.sub || decoded?.email;
 
     const getStatusStyle = (status) => {
         switch (status?.toLowerCase()) {
@@ -38,7 +39,7 @@ export default function AddIngredient() {
 
     useEffect(() => {
         if (!token) return;
-        fetch("http://localhost:8080/ingredient-request/my", {
+        fetch(`http://localhost:8080/ingredient-request/my?email=${email}`, {
             headers: { Authorization: `Bearer ${token}` }
         })
             .then(res => res.ok ? res.json() : [])
@@ -73,7 +74,7 @@ export default function AddIngredient() {
                         "Content-Type": "application/json",
                         Authorization: `Bearer ${token}`
                     },
-                    body: JSON.stringify({ name, symbol })
+                    body: JSON.stringify({ name, symbol, email })
                 });
             }
             if (!res.ok) {
@@ -83,7 +84,7 @@ export default function AddIngredient() {
             setMessage(role === "ADMIN" ? "Ingredient added successfully." : "Request sent successfully.");
             setName("");
             setSymbol("");
-            const refreshed = await fetch("http://localhost:8080/ingredient-request/my", {
+            const refreshed = await fetch(`http://localhost:8080/ingredient-request/my?email=${email}`, {
                 headers: { Authorization: `Bearer ${token}` }
             }).then(r => r.ok ? r.json() : []);
             setRequests(Array.isArray(refreshed) ? refreshed : []);
