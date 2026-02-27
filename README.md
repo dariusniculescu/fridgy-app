@@ -60,12 +60,3 @@ The data layer is managed via Spring Data JPA with a relational MySQL structure.
 
 ---
 
-## Installation and Setup
-
-### 1. Database Configuration
-Create a MySQL schema named `dfridgy` and update `src/main/resources/application.properties`:
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/dfridgy
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-spring.jpa.hibernate.ddl-auto=update
