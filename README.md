@@ -65,7 +65,7 @@ The data layer is managed via Spring Data JPA with a relational MySQL structure.
 
 ###  Public & Authentication
 
-| Landing Page (Hero) | Login Screen |
+| Landing Page  | Login Screen |
 |:---:|:---:|
 | ![Landing](assets/landing_page.png) | ![Login](assets/login_screen.png) |
 
