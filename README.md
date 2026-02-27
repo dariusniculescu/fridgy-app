@@ -10,13 +10,13 @@ Fridgy is a full-stack web application that helps users manage their kitchen inv
 
 ## Features
 
-* AI-Driven Recipe Generation: Integration with OpenAI API (GPT models) to analyze available ingredients and generate creative, structured recipes.
-* Secure User Authentication: Implementation of Spring Security with JWT (JSON Web Tokens) and BCrypt password hashing for secure access.
-* Inventory Management System: Comprehensive CRUD functionality for tracking food items, quantities, and expiration dates.
-* Role-Based Access Control: Specialized interfaces and permissions for regular Users and Administrators.
-* Administrative Insights: Dashboard for monitoring platform usage, managing user accounts, and content moderation.
-* Persistent Storage: Robust data management using MySQL with efficient relational mapping via Hibernate.
-* Responsive User Interface: A modern, single-page application (SPA) built with React for a seamless user experience across devices.
+* **AI-Driven Recipe Generation**: Integration with OpenAI API to analyze available ingredients and generate high-quality, structured recipes.
+* **Secure User Authentication**: Implementation of Spring Security with JWT (JSON Web Tokens) and custom decoding logic in the frontend for secure access.
+* **Ingredient Suggestion System**: A unique workflow where users can suggest new ingredients (with custom names and symbols/emojis), which are then moderated by administrators.
+* **Inventory Management**: Comprehensive CRUD functionality for tracking food items and managing personal digital fridges.
+* **Role-Based Access Control**: Dedicated permissions for Users and Administrators (managed via Spring Security roles).
+* **Live Admin Tools**: Capability for admins to approve or reject ingredient requests with personalized feedback messages.
+* **Responsive User Interface**: A modern, fluid SPA built with React, Tailwind CSS, and Framer Motion for smooth animations.
 
 ---
 
@@ -30,8 +30,9 @@ The application follows a decoupled MVC (Model-View-Controller) architecture to 
 * **Security**: Implements Spring Security with JWT and BCrypt for secure, stateless authentication and role-based access control (USER/ADMIN).
 
 ### Frontend (React.js)
-* **Component-Based UI**: Utilizes reusable components for a consistent design across the ingredient selection grid and the admin dashboard.
-* **State Management**: Handles real-time updates for ingredient selection and asynchronous API calls using React Hooks.
+* **Component-Based UI**: Reusable components for a consistent design.
+* **Styling & Animations**: Tailwind CSS and Framer Motion for a premium look and feel.
+* **State Management**: Real-time updates using React Hooks (useState, useEffect, useMemo).
 
 ---
 
@@ -53,10 +54,10 @@ The data layer is managed via Spring Data JPA with a relational MySQL structure.
 
 ## System Logic: How it Works
 
-1. **Selection**: Users interact with the React interface to pick ingredients from their digital inventory.
-2. **API Request**: The frontend sends the selected data to the Spring Boot Controller via Axios.
-3. **AI Integration**: The Service layer constructs a specific prompt and calls the OpenAI API to generate a structured, high-quality recipe.
-4. **Persistence & Analytics**: The generated recipe is stored in MySQL, and the Admin Dashboard is updated in real-time with usage statistics.
+1. **Selection**: Users pick ingredients from the React interface.
+2. **API Request**: Data is sent to the Spring Boot Controller via Fetch API.
+3. **AI Integration**: The Service layer calls the OpenAI API to generate a recipe.
+4. **Persistence**: Data is saved in MySQL, and the Admin Dashboard updates statistics.
 
 ---
 
